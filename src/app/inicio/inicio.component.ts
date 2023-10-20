@@ -86,6 +86,7 @@ export class InicioComponent {
     this.fichas = [];
     this.puntaje = 0;
     this.movimientos = 0;
+    this.puntajeExtra = 120;
     let fichasBuff:any = [];
     const numeros = this.randomArray();
     numeros.forEach((i:any)=>{
@@ -99,6 +100,7 @@ export class InicioComponent {
   }
   cronometro(){
     return setInterval(()=>{
+      this.puntajeExtra--;
       this.segundos--;
       if(this.segundos == -1){
         this.segundos = 59
@@ -148,7 +150,9 @@ export class InicioComponent {
       this.finalizados++;
       if(this.finalizados == 6){
         setTimeout(()=>{
-
+          if(this.puntajeExtra > 0){
+            this.puntaje = this.puntaje + this.puntajeExtra;
+          }
           this.finalizar();
         }, 2000)
       }
