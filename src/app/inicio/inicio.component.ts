@@ -95,7 +95,6 @@ export class InicioComponent {
     })
 
     this.fichas = this.shuffle(fichasBuff)
-    console.log(this.fichas)
     this.reloj = this.cronometro();
   }
   cronometro(){
@@ -162,7 +161,7 @@ export class InicioComponent {
         this.selecciones[0].html.classList.remove("flip")
         this.selecciones[1].html.classList.remove("flip")
         this.selecciones = [];
-      },2000)
+      },3500)
     }
   }
 }
