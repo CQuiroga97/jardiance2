@@ -168,3 +168,32 @@ span.count.fontSi{
   .divTerminar{
     top: 80px;
   }
+  @media only screen and (max-width: 991px) {
+    .topDiv span{
+      color: white;
+      font-size: 12px;
+  }
+    .juego{
+      scale: .8;
+    }
+    .divCuadro{
+      width: 144px;
+      height: 120px;
+    }
+    .finJuego{
+      color: white;
+      font-size: 18px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .divCuadro{
+      width: 100px;
+      height: 90px;
+    }
+  }
+  @media only screen and (max-width: 527px) {
+    .divCuadro{
+      width: 90px;
+      height: 80px;
+    }
+  }
