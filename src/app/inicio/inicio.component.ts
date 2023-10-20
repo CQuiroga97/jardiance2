@@ -49,6 +49,12 @@ export class InicioComponent {
       return array;
   }
   constructor(){
+    var img=new Image();
+    const numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+    numeros.forEach((i:any)=>{
+      img.src = `../../assets/img/img${i}.png`;
+      img.src = `../../assets/img/img${i}-r.png`;
+    })
     //this.iniciar();
 
   }
