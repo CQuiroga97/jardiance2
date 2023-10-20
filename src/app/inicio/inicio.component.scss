@@ -112,7 +112,6 @@ span.count.fontSi{
   .circulo2{
     width: 50px;
     height: 50px;
-    background-color: #000;
     display: flex;
     border-radius: 50px;
     opacity: .5;
@@ -156,6 +155,7 @@ span.count.fontSi{
     font-size: 25px;
     position: relative;
     top: -50px;
+    border: none;
   }
   .pextra{
     font-size: 20px;
@@ -186,14 +186,53 @@ span.count.fontSi{
     }
   }
   @media only screen and (max-width: 768px) {
-    .divCuadro{
-      width: 100px;
-      height: 90px;
+    .juego{
+      width: 100%;
     }
-  }
-  @media only screen and (max-width: 527px) {
+    .w-75{
+      width: 90% !important;
+    }
+    .juego{
+      overflow: auto;
+    }
+    .pt-4{
+      padding-top: 2px !important;
+    }
+    .divTerminar{
+      top: 45px;
+    }
+    .col-1{
+      width: 20%;
+      padding: 2px;
+    }
+    .col-2.topDiv{
+      width: 35%;
+    }
+    .col-4{
+      width: 60%;
+    }
+    .col-6{
+      width: 100%;
+    }
+    .col-8{
+      width: 53%;
+    }
     .divCuadro{
-      width: 90px;
-      height: 80px;
+      margin: auto;
+    }
+    .col-3{
+      width: 69%;
+    }
+    .p-5{
+      padding: 1rem !important;
+    }
+    .fullBackground{
+      background-image: url(../../assets/img/mc-afe8242971e91c5b39caed2300eb69c5.png);
+      background-size: auto 100%;
+  }
+  }
+  @media only screen and (max-width: 390px) {
+    .w-75{
+      width: 100% !important;
     }
   }

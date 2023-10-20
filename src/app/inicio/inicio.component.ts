@@ -114,6 +114,10 @@ export class InicioComponent {
       
     },1000)
   }
+  finalizarFront(){
+    this.puntajeExtra = 0;
+    this.finalizar();
+  }
   seleccionar(f:any, e:any){
     
     if(this.selecciones.length < 2){
