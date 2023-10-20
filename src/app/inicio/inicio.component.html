@@ -1,0 +1,154 @@
+<div class="fullBackground d-flex pt-5">
+   <div class="juego m-auto">
+        <div class="container d-flex h-100" *ngIf="estadoJuego == 0">
+            <div class="row m-auto justify-content-center">
+                <div class="col-10">
+                    <div class="circulo d-flex" (click)="iniciarJuego()">
+                        <nb-icon icon="arrow-right-outline" class="m-auto"></nb-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-flex h-100 grayBg" *ngIf="estadoJuego == 1">
+            <span class="count m-auto" [class.fontSi]="timerClass == 1">
+                {{count}}
+            </span>
+        </div>
+        <div class="container p-4 position-relative" *ngIf="estadoJuego == 2">
+            <div class="divTerminar">
+                <button (click)="finalizar()"> Terminar </button>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-1 topDiv m-1 p-2">
+                    <span>
+                        0{{minutos}}:{{segundos > 9?segundos:"0"+segundos}}
+                    </span>
+                    </div>
+                <div class="col-1 topDiv m-1 p-2">
+                    <span>{{puntaje}}</span>
+                    pt.</div>
+                <div class="col-2 topDiv m-1 p-2">
+                    <span>{{movimientos}}</span>
+                    Movimientos</div>
+            </div>
+            <div class="row m-auto w-75">
+                <div class="divCuadro" #cu *ngFor="let f of fichas" (click)="seleccionar(f, cu)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="../../assets/img/default.png" alt="Avatar" class="w-100 h-100">
+                        </div>
+                        <div class="flip-card-back">
+                            <img [src]="f.imagen" alt="Avatar" class="w-100 h-100">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container grayBg finJuego h-100 p-5 position-relative"*ngIf="estadoJuego == 3">
+            <div class="salir" (click)="cambiarEstado(0)">
+                <div class="circulo2">
+                    <nb-icon icon="close-circle-outline">
+
+                    </nb-icon>
+                </div>
+            </div>
+            <div class="row justify-content-center p-5">
+                <div class="col-4 d-flex">
+                    <span class="m-auto">
+                        Resumen de partida
+                    </span>
+                </div>
+            </div>
+            <div class="row justify-content-center m-3">
+                <div class="col-6 resumen pt-4 pb-4">
+                    <div class="container">
+                        <div class="row justify-content-around">
+                            <div class="col-1">
+                                <div class="circulo2">
+                                    <nb-icon icon="radio-button-on-outline">
+
+                                    </nb-icon>
+                                </div>
+                            </div>
+                            <div class="col-8 textoIn">Movimientos</div>
+                            <div class="col-2">{{movimientos}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center m-3">
+                <div class="col-6 resumen pt-4 pb-4">
+                    <div class="container">
+                        <div class="row justify-content-around">
+                            <div class="col-1">
+                                <div class="circulo2">
+                                    <nb-icon icon="clock-outline">
+
+                                    </nb-icon>
+                                </div>
+                            </div>
+                            <div class="col-8 textoIn">Te ha sobrado
+                                <span style="color: white;">
+                                    0{{minutos}}:{{segundos > 9?segundos:"0"+segundos}}
+                                </span>
+                            </div>
+                            <div class="col-2 pextra"> <i>+{{puntajeExtra}}pt.</i> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center m-3 mb-0">
+                <div class="container justify-content-center">
+                    <div class="row justify-content-center z-3 position-relative">
+                        <div class="col-6 resumen pt-4 pb-4 score">
+                            <div class="container">
+                                <div class="row justify-content-around">
+                                    <div class="col-1">
+                                        <div class="circulo2">
+                                            <nb-icon icon="award-outline" style="color: white;">
+        
+                                            </nb-icon>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 ">Total</div>
+                                    <div class="col-2"><span>{{puntaje}}</span>pt.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center score2">
+                        <div class="col-6 resumen pt-4 pb-4">
+                            <div class="container">
+                                <div class="row justify-content-around oculto">
+                                    <div class="col-1">
+                                        <div class="circulo2">
+                                            <nb-icon icon="award-outline">
+        
+                                            </nb-icon>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 textoIn">Total</div>
+                                    <div class="col-1">{{movimientos}}</div>
+                                </div>
+                                <div class="row justify-content-around mt-3">
+                                    <div class="col-6 mejor">
+                                        Tu mejor resultado fue: 
+                                        <span>{{mejorPuntaje}}</span>
+                                        pt.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3 d-flex">
+                    <button nbButton class="m-auto p-2" (click)="iniciarJuego()">Jugar de nuevo</button>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
