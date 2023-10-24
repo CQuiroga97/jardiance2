@@ -155,7 +155,7 @@ export class InicioComponent {
       this.selecciones[0].html.classList.add("check")
       this.selecciones[1].html.classList.add("check")
       this.selecciones = [];
-      this.puntaje++;
+      this.puntaje = this.puntaje + 5 ;
       this.finalizados++;
       if(this.finalizados == 6){
         setTimeout(()=>{
